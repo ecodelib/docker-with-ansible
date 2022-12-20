@@ -1,0 +1,17 @@
+[DEV_SERVERS]
+lx_dev ansible_host=XX.XX.XX.XX
+
+[STAGE_SERVERS]
+lx_stage ansible_host=XX.XX.XX.XX
+
+[PROD_SERVERS]
+lx_prod ansible_host=XX.XX.XX.XX
+
+[SERVERS:children]
+STAGE_SERVERS
+PROD_SERVERS
+DEV_SERVERS
+
+[SERVERS:vars]
+ansible_user=user_name
+ansible_ssh_private_key_file="/home/user_name/.ssh/id_rsa"
